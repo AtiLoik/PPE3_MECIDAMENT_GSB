@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once("modeles/class.medicaments.inc.php");
+require_once("modeles/class.connexion.inc.php");
+require_once("modeles/monPdo.inc.php");
 
 if(!isset($_REQUEST['uc']))  // si le contrôleur n'est pas défini (donc première venue sur le site
      $uc = 'authentification';        //on lui affecte connexion
