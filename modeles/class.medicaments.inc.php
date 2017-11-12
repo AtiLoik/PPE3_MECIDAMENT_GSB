@@ -43,13 +43,22 @@ class Medicaments{
         
     }
     public static function getAll()
-    {
-        $sql="SELECT * FROM medicaments " ;
-        $resultat=MonPdo::getInstance()->query($sql);
-        $lesMedicaments=$resultat->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Medicaments');
-        return $lesMedicaments;
-		throw new Exception("Problème dans l'execution de la requête.") ;
-    }
+        {
+            $sql = "SELECT * FROM medicaments";
+            $resultat = MonPdo::getInstance()->query($sql);
+            $lesMedoc = $resultat->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Medicaments");
+            return $lesMedoc;
+            throw new Exception("Problème dans l'execution de la requête.") ;
+        }
+
+        public static function findById($id)
+        {
+            $req = "select * from medicaments where MED_DEPOTLEGAL = ".$id;
+            $monPdo = MonPdo::getInstance();
+            $result = $monPdo->query($req);
+            $final = $result->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Medicaments");
+            return $final;
+        }
 
 }
 ?>

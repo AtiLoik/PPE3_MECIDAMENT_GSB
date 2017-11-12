@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<head>
-	<title>Gestion des visites</title>
-    <meta charset="utf-8">
-
-   <link href="styles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-<a href="index.php?uc=accueil"><img src="images/logo.jpg"/></a>
-	<h2>Gestion des visites</h2>
+<html>
+<head><title>GSB : Suivi de la Visite médicale </title></head>
+<body bgcolor="white" text="5599EE">
+<div name="haut" style="margin: 2 2 2 2 ;height:6%;"><h1><a href="index.php?uc=accueil"><img src="images/logo.jpg"/></a>Gestion des visites</h1></div>
 	<?php
-			If (!empty( $_SESSION['login'])) // si quelqu'un est connecté
+			If (!empty( $_SESSION['Praticien'])||!empty( $_SESSION['Visiteur'])) // si quelqu'un est connecté
 			{ 
 				<a href="index.php?uc=accueil">se deconnecter</a>
 			<?php } ?>

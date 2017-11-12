@@ -1,8 +1,6 @@
 <?php
 session_start();
 require_once("modeles/class.medicaments.inc.php");
-require_once("modeles/class.connexion.inc.php");
-require_once("modeles/monPdo.inc.php");
 
 if(!isset($_REQUEST['uc']))  // si le contrôleur n'est pas défini (donc première venue sur le site
      $uc = 'authentification';        //on lui affecte connexion
@@ -12,13 +10,9 @@ else
 switch($uc) //suivant le contrôleur dans uc
 {
 	case 'accueil':
-		include("vues/accueil.php");  //page d'accueil
+		include("vue/Medicament.php");  //page d'accueil
 		break;
 		
-	case 'Medicament':
-		include ("controleurs/c_Medicament.php");
-		break;
-
 	case 'authentification' :
 		include("controleurs/c_Connexion.php");
 		break;
