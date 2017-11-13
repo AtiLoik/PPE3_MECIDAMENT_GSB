@@ -10,7 +10,7 @@
 			<li>Consulter</li>
 		</ul>
 		<li>Consulter</li>
-		<ul><li><a href="index.php?uc=Medicament&action=Ajouter" >Médicaments</a></li>
+		<ul><li><a href="index.php?uc=Medicament&action=Afficher" >Médicaments</a></li>
 			<li><a href="" >Praticiens</a></li>
 			<li><a href="" >Autres visiteurs</a></li>
 		</ul>

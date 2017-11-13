@@ -17,7 +17,7 @@
 			<li>Consulter</li>
 		</ul>
 		<li>Consulter</li>
-		<ul><li><a href="" >Médicaments</a></li>
+		<ul><li><a href="index.php?uc=Medicament&action=Afficher" >Médicaments</a></li>
 			<li><a href="" >Praticiens</a></li>
 			<li><a href="" >Autres visiteurs</a></li>
 		</ul>
@@ -25,6 +25,7 @@
 </div>
 <div name="droite" style="float:left;width:80%;">
 	<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:77AADD;color:white;height:88%;">
+		<p><a href="index.php?uc=Medicament&action=Afficher">Afficher la liste des médicaments</a></p>
 	<form name="formMEDICAMENT" method="post" action="recupMEDICAMENT.php">
 		<h1> Pharmacopee </h1>
 		<label class="titre">DEPOT LEGAL :</label><input type="text" size="10" name="MED_DEPOTLEGAL" class="zone" />

@@ -1,9 +1,21 @@
 <?php
-public static function getAll()
+	class Medicament
+	{
+		public static function getAll()
 		{
-			$sql = "SELECT * FROM artist";
+			$sql = "SELECT * FROM medicaments";
 			$resultat = MonPdo::getInstance()->query($sql);
-			$lesArtist = $resultat->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Artist");
-			return $lesArtist;
+			$lesMedoc = $resultat->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Medicament");
+			return $lesMedoc;
 		}
+
+		public static function findById($id)
+		{
+			$req = "select * from medicaments where MED_DEPOTLEGAL = ".$id;
+			$monPdo = MonPdo::getInstance();
+			$result = $monPdo->query($req);
+			$final = $result->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Medicament");
+			return $final;
+		}
+	}
 ?>
