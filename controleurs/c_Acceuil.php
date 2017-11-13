@@ -10,13 +10,9 @@ else
 switch($uc) //suivant le contrôleur dans uc
 {
 	case 'accueil':
-		include("vues/accueil.php");  //page d'accueil
+		include("vue/Medicament.php");  //page d'accueil
 		break;
 		
-	case 'Medicament':
-		include ("controleurs/c_Medicament.php");
-		break;
-
 	case 'authentification' :
 		include("controleurs/c_Connexion.php");
 		break;
