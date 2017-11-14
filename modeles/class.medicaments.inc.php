@@ -59,6 +59,12 @@ class Medicaments{
             $final = $result->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Medicaments");
             return $final;
         }
-
+    public function ajouter()
+    {
+        $sql = "Insert into medicaments values($POST_MED_DEPOTLEGAL,$POST_FAM_CODE,$POST_MED_NOMCOMMERCIAL,$POST_MED_COMPOSITION,$POST_MED_EFFETS,$POST_MED_CONTREINDIC,$POST_MED_PRIXECHANTILLON)";
+            $resultat = MonPdo::getInstance()->query($sql);
+            
+            throw new Exception("Problème dans l'execution de la requête.") ;
+    }
 }
 ?>
