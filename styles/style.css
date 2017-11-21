@@ -134,7 +134,7 @@ ul h4 {
 #header {
 	height: 75px;
 	position: relative;
-	background: #6E6E6E url(images/img03.jpg) top left no-repeat;
+	background: #1E90FF url(images/img03.jpg) top left no-repeat;
 	padding: 45px;
 	color: #FFFFFF;
 	width: 888px;
@@ -181,7 +181,7 @@ ul h4 {
 #menu {
 	padding: 0 45px 0 45px;
 	position: relative;
-	background: #209D9D url(images/img02.gif) repeat-x top left;
+	background: #0000CD url(images/img02.gif) repeat-x top left;
 	margin: 0;
 	height: 60px;
 	width: 890px;

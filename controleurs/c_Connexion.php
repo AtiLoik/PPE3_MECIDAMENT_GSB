@@ -1,3 +1,4 @@
+<div id="page">
 <?php
 if(!isset($_REQUEST['action']))
      $action = 'connexion';        
@@ -39,3 +40,5 @@ switch($action)
 			header("refresh: 0;url=index.php");
 
 }
+?>
+</div>
