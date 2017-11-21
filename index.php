@@ -12,6 +12,7 @@ else
 switch($uc) //suivant le contrôleur dans uc
 {
 	case 'accueil':
+		include("vues/entete.php");
 		include("vues/accueil.php");  //page d'accueil
 		break;
 		

@@ -1,5 +1,5 @@
 <section>
-	<form action="index.php?uc=authentification&action=verifConnexion" method='post'>
+	<form action="index.php?uc=authentification&action=verifConnexion" method='post'>   
 		<select name="type">
 <?php
 	$lesTypes=Connexion::Type();
