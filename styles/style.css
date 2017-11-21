@@ -383,45 +383,6 @@ ul h4 {
 	margin: 0 0 0 690px;
 }
 
-#slider {
-	position: relative;
-	margin: 45px 45px 0px 45px;
-	width: 890px;
-}
-
-#slider .viewer {
-	width: 890px;
-	height: 250px;
-	border: solid 1px #D4D4D4;
-	border-radius: 3px;
-}
-
-#slider .slide {
-	width: 890px;
-	height: 250px;
-	padding: 10px;
-}
-
-#slider .indicator {
-	position: relative;
-	z-index: 1;
-	text-align: center;
-	margin: 20px 0 0 0;
-}
-
-#slider .indicator span {
-	display: inline-block;
-	text-indent: -9999em;
-	width: 12px;
-	height: 12px;
-	background: #E3DFDF;
-	border-radius: 6px;
-	margin: 0 2px 0 2px;
-}
-
-#slider .indicator span.active {
-	background: #6E6E6E;
-}
 
 #wrapper {
 	position: relative;
