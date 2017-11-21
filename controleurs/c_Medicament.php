@@ -1,6 +1,8 @@
-<?php
+<div id="page">
+<?php 
 
 	$action = $_REQUEST['action'];
+
 
 switch($action) //suivant le contrôleur dans uc
 {

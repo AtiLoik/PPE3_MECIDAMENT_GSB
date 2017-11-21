@@ -3,16 +3,21 @@ session_start();
 require_once("modeles/class.medicaments.inc.php");
 require_once("modeles/class.connexion.inc.php");
 require_once("modeles/monPdo.inc.php");
+include("vues/entete.php");
 
 if(!isset($_REQUEST['uc']))  // si le contrôleur n'est pas défini (donc première venue sur le site
      $uc = 'authentification';        //on lui affecte connexion
 else
 	$uc = $_REQUEST['uc'];
 
+if( $uc != "authentification")
+{
+	include("vues/menu.php");
+}
+
 switch($uc) //suivant le contrôleur dans uc
 {
 	case 'accueil':
-		include("vues/entete.php");
 		include("vues/accueil.php");  //page d'accueil
 		break;
 		
