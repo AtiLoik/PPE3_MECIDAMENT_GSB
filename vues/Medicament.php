@@ -2,6 +2,7 @@
 	<div id="content">
 		<div class="box">
 			<h2>Fiche Medicaments</h2>
+			<p><a href="index.php?uc=Medicament&action=Afficher">Afficher les médicaments</a></p>
 			<section>
 				<form name="formMEDICAMENT" method="post" action="recupMEDICAMENT.php">
 		<label for "DepotLegal">DEPOT LEGAL :</label><input type="text" size="10" name="MED_DEPOTLEGAL" class="zone" />
