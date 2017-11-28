@@ -1,17 +1,21 @@
 <?php
-include ('modeles/monpdo.php');
-include ('Medicament.php');
-
-	if(!empty($_GET['action']))
+	
+	include ("modeles/Medicament.class.php");
+	var_dump($_GET['Rech']);
+	$leMedoc = Medicament::Modifier($_GET['Rech']);
+	foreach ($leMedoc as $Medoc)
 	{
-		if($_GET['action'] == 'afficher')
-		{
-			$artist = Medicament::findById($_GET['action']->id);
-
-		}
-		//if($_GET['action'] == 'supprimer')
-		//{
-			//Medicament::supprimerArtist($_GET['action']->id);
-		//}
+		echo "<table>";
+		echo "<tr>";
+		echo "<td> Depot Legal: ".$Medoc->getDepotLegal()."</td>";
+		echo "<td> Code: ".$Medoc->getCode()."</td>";
+		echo "<td> Nom Commercial: ".$Medoc->getNomCommercial()."</td>";
+		echo "<td> Composition: ".$Medoc->getComposition()."</td>";
+		echo "<td> Effet: ".$Medoc->getEffet()."</td>";
+		echo "<td> Contre Indication: ".$Medoc->getContreIndic()."</td>";
+		echo "<td> Prix: ".$Medoc->getPrixEchantillon()."</td>";
+		echo "</tr>";
+		echo "</table>";
 	}
+	
 ?>

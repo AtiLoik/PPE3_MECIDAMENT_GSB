@@ -24,7 +24,7 @@
 		echo "<td>".$lesMedoc->getEffet()."</td>";
 		echo "<td>".$lesMedoc->getContreIndic()."</td>";
 		echo "<td>".$lesMedoc->getPrixEchantillon()."</td>";
-		echo "<td> <a href = 'index.php?uc=Medicament&action=Modifier'>Afficher</a> </td>";
+		echo "<td> <a href = 'index.php?uc=Medicament&action=Modifier&Rech=4'>Afficher</a> </td>";
 		//echo "<td> <a href = 'ModifArtiste.php'?action=supprimer>Supprimer</a> </td>";
 		echo "</tr>";
 	}
