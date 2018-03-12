@@ -1,27 +1,19 @@
 <?php
 	
-	require_once("modeles/class.medicaments.inc.php");
-	$leMedoc = Medicaments::findById($_GET['Rech']);
+	include ("modeles/Medicament.class.php");
+	var_dump($_GET['Rech']);
+	$leMedoc = Medicament::Modifier($_GET['Rech']);
 	foreach ($leMedoc as $Medoc)
 	{
 		echo "<table>";
 		echo "<tr>";
-		echo "<td> Depot Legal:</td>";
-		echo "<td> Code:</td>";
-		echo "<td> Nom Commercial:</td>";
-		echo "<td> Composition:</td>";
-		echo "<td> Effet:</td>";
-		echo "<td> Contre Indication:</td>";
-		echo "<td> Prix:</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td> ".$Medoc->getDepotLegal()."</td>";
-		echo "<td> ".$Medoc->getCode()."</td>";
-		echo "<td> ".$Medoc->getNomCommercial()."</td>";
-		echo "<td> ".$Medoc->getComposition()."</td>";
-		echo "<td> ".$Medoc->getEffet()."</td>";
-		echo "<td> ".$Medoc->getContreIndic()."</td>";
-		echo "<td> ".$Medoc->getPrixEchantillon()."</td>";
+		echo "<td> Depot Legal: ".$Medoc->getDepotLegal()."</td>";
+		echo "<td> Code: ".$Medoc->getCode()."</td>";
+		echo "<td> Nom Commercial: ".$Medoc->getNomCommercial()."</td>";
+		echo "<td> Composition: ".$Medoc->getComposition()."</td>";
+		echo "<td> Effet: ".$Medoc->getEffet()."</td>";
+		echo "<td> Contre Indication: ".$Medoc->getContreIndic()."</td>";
+		echo "<td> Prix: ".$Medoc->getPrixEchantillon()."</td>";
 		echo "</tr>";
 		echo "</table>";
 	}
