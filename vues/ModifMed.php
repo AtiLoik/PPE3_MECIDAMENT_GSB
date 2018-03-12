@@ -1,7 +1,6 @@
 <?php
 	
 	require_once("modeles/class.medicaments.inc.php");
-	var_dump($_GET['Rech']);
 	$leMedoc = Medicaments::findById($_GET['Rech']);
 	foreach ($leMedoc as $Medoc)
 	{
