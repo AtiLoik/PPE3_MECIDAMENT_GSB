@@ -59,12 +59,19 @@ class Medicaments{
             $final = $result->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Medicaments");
             return $final;
         }
-    public function ajouter()
+    public static function ajouter($depotlegal,$fam_code,$NomCommercial,$composition,$effets,$contreindic,$prixechantillion)
     {
-        $sql = "Insert into medicaments values($POST_MED_DEPOTLEGAL,$POST_FAM_CODE,$POST_MED_NOMCOMMERCIAL,$POST_MED_COMPOSITION,$POST_MED_EFFETS,$POST_MED_CONTREINDIC,$POST_MED_PRIXECHANTILLON)";
-            $resultat = MonPdo::getInstance()->query($sql);
+        $sql = "Insert into medicaments values(:DEPOTLEGAL,:FAM_CODE,:MED_NOMCOMMERCIAL,:MED_COMPOSITION,:MED_EFFETS,:MED_CONTREINDIC,:MED_PRIXECHANTILLON)";
+        $resultat=MonPdo::getInstance()->prepare($sql);
+        $resultat->bindParam(':DEPOTLEGAL',$depotlegal);
+        $resultat->bindParam(':FAM_CODE',$fam_code);
+        $resultat->bindParam(':MED_NOMCOMMERCIAL',$NomCommercial);
+        $resultat->bindParam(':MED_COMPOSITION',$composition);
+        $resultat->bindParam(':MED_EFFETS',$effets);
+        $resultat->bindParam(':MED_CONTREINDIC',$contreindic);
+        $resultat->bindParam(':MED_PRIXECHANTILLON',$prixechantillion);
+        $resultat->execute();
             
-            throw new Exception("Problème dans l'execution de la requête.") ;
     }
 
     public static function Modifier($id)
