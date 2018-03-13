@@ -36,11 +36,11 @@
 <div id="wrapper">
 	<div id="header">
 		<div id="logo">
-			<h1><a href="index.php">Suivi de la visite médicale</a></h1>
+			<h1><a href="index.php?uc=accueil">Suivi de la visite médicale</a></h1>
 		</div>
 		<div id="slogan">
 		<?php
-			If (!empty( $_SESSION['Praticien'])||!empty( $_SESSION['Visiteur'])) // si quelqu'un est connecté
+			If (!empty( $_SESSION['Praticien'])||!empty( $_SESSION['Visiteur'])||!empty( $_SESSION['Admin'])) // si quelqu'un est connecté
 			{ 
 			?>
 				<a class="btn" href="index.php?uc=authentification&action=deconnexion">se deconnecter</a>                                                                      

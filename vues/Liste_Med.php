@@ -8,27 +8,50 @@
 	</style>
 </head>
 <div id="page">
-		<p><a href="index.php?uc=Medicament&action=Ajouter">Ajouter un médicament</a></p>
+	<?php
+			If (!empty( $_SESSION['Admin'])) // si quelqu'un est connecté
+			{ 
+			?>
+				<p><a href="index.php?uc=Medicament&action=Ajouter">Ajouter un médicament</a></p>                                                                      
+			<?php 
+			}
+			else{
 
-<?php
-	echo "<table>";
-	echo "<tr><td>Depot Legal</td><td>Famille</td><td>Nom Commercial</td><td>Composition</td><td>Effet</td><td>Contre Indication</td><td>Prix</td></tr>";
+			} 
+			?>				
+	<table>
+	<tr><td>Depot Legal</td><td>Famille</td><td>Nom Commercial</td><td>Composition</td><td>Effet</td><td>Contre Indication</td><td>Prix</td></tr>
+
+	<?php
 	$listMedoc = Medicaments::getAll();
 	foreach($listMedoc as $lesMedoc)
 	{
-		echo "<tr>";
-		echo "<td>".$lesMedoc->getDepotLegal()."</td>";
-		echo "<td>".$lesMedoc->getCode()."</td>";
-		echo "<td>".$lesMedoc->getNomCommercial()."</td>";
-		echo "<td>".$lesMedoc->getComposition()."</td>";
-		echo "<td>".$lesMedoc->getEffet()."</td>";
-		echo "<td>".$lesMedoc->getContreIndic()."</td>";
-		echo "<td>".$lesMedoc->getPrixEchantillon()."</td>";
-		echo "<td> <a href = 'index.php?uc=Medicament&action=Modifier&Rech=4'>Afficher</a> </td>";
-		//echo "<td> <a href = 'ModifArtiste.php'?action=supprimer>Supprimer</a> </td>";
-		echo "</tr>";
+		$id = $lesMedoc->getDepotLegal();
+		$code =$lesMedoc->getCode();
+		$NomCommercial = $lesMedoc->getNomCommercial();
+		$Composition = $lesMedoc->getComposition();
+		$Effet = $lesMedoc->getEffet();
+		$ContreIndic = $lesMedoc->getContreIndic();
+		$PrixEchantillon = $lesMedoc->getPrixEchantillon();
+	?>
+		<tr>
+		<td><?php echo $id ?></td>
+		<td><?php echo $code ?></td>
+		<td><?php echo $NomCommercial ?></td>
+		<td><?php echo $Composition ?></td>
+		<td><?php echo $Effet ?></td>
+		<td><?php echo $ContreIndic ?></td>
+		<td><?php echo $PrixEchantillon ?></td>
+		
+		<?php If (!empty( $_SESSION['Admin'])){?>
+		<td> <a href = 'index.php?uc=Medicament&action=Afficher' >Afficher</a><br>
+		<a href="index.php?uc=Medicament&action=Modifier&id=<?php echo $id ?>">Modifier</a>
+		<a href = 'index.php?uc=Medicament&action=Supprimer&id=<?php echo $id ?>'>Supprimer</a></td>                                                                     
+			<?php 
+			}?>	
+		
+		</tr>
+		<?php
 	}
-	echo "</table>";
-?>
-
-</div>
+	?>
+</table>

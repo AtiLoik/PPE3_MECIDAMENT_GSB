@@ -27,6 +27,10 @@ switch($action)
 									$_SESSION['Praticien']=$_POST['login'];
 								header("refresh: 0;url=index.php?uc=accueil");
 								}
+								if ($_POST['type']=="3") {
+									$_SESSION['Admin']=$_POST['login'];
+								header("refresh: 0;url=index.php?uc=accueil");
+								}
 								else{
 									$_SESSION['Visiteur']=$_POST['login'];
 								header("refresh: 0;url=index.php?uc=accueil");
