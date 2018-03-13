@@ -33,8 +33,3 @@ include("vues/pied.php") ;// pied de site
 /*include ("vues/entete.php");
 include ("vues/menu.php");*/
 ?>
-<div id="page">
-
-<img src="images/logo.jpg" />
-
-</div>

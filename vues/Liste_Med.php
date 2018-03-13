@@ -23,7 +23,15 @@
 	<tr><td>Depot Legal</td><td>Famille</td><td>Nom Commercial</td><td>Composition</td><td>Effet</td><td>Contre Indication</td><td>Prix</td></tr>
 
 	<?php
-	$listMedoc = Medicaments::getAll();
+	if(!empty($_REQUEST['id']))
+	{ // si on demande une modification d'un medicament
+			$listMedoc = Medicaments::findById($_REQUEST['id']);
+	}
+	else
+	{
+		$listMedoc = Medicaments::getAll();
+	}
+	
 	foreach($listMedoc as $lesMedoc)
 	{
 		$id = $lesMedoc->getDepotLegal();
@@ -43,13 +51,23 @@
 		<td><?php echo $ContreIndic ?></td>
 		<td><?php echo $PrixEchantillon ?></td>
 		
-		<?php If (!empty( $_SESSION['Admin'])){?>
-		<td> <a href = 'index.php?uc=Medicament&action=Afficher' >Afficher</a><br>
-		<a href="index.php?uc=Medicament&action=Modifier&id=<?php echo $id ?>">Modifier</a>
-		<a href = 'index.php?uc=Medicament&action=Supprimer&id=<?php echo $id ?>'>Supprimer</a></td>                                                                     
-			<?php 
-			}?>	
+	<?php
+	if(!empty($_REQUEST['id']))
+	{ 
 		
+	}
+	else
+	{
+		?>
+		<td> <a href = 'index.php?uc=Medicament&action=Afficher&id=<?php echo $id ?>'>Afficher</a><br>
+		<?php If (!empty( $_SESSION['Admin']))
+		{?>
+
+		<a href="index.php?uc=Medicament&action=Modifier&id=<?php echo $id ?>">Modifier</a>
+		<a href = 'index.php?uc=Medicament&action=Supprimer&id=<?php echo $id ?>'>Supprimer</a></td>
+		<?php 
+		}	
+	}?>
 		</tr>
 		<?php
 	}

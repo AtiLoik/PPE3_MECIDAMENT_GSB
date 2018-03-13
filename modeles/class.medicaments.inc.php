@@ -73,7 +73,7 @@ class Medicaments{
     }
     public static function Modifier($id,$fam_code,$NomCommercial,$composition,$effets,$contreindic,$prixechantillion)
     {
-        $sql = "Update medicaments set :FAM_CODE,:MED_NOMCOMMERCIAL,:MED_COMPOSITION,:MED_EFFETS,:MED_CONTREINDIC,:MED_PRIXECHANTILLON where MED_DEPOTLEGAL= (:DEPOTLEGAL) ";
+        $sql = "Update medicaments set FAM_CODE= (:FAM_CODE),MED_NOMCOMMERCIAL = (:MED_NOMCOMMERCIAL), MED_COMPOSITION= (:MED_COMPOSITION),MED_EFFET= (:MED_EFFETS), MED_CONTREINDIC= (:MED_CONTREINDIC),MED_PRIXECHANTILLON = (:MED_PRIXECHANTILLON) where MED_DEPOTLEGAL= (:DEPOTLEGAL) ";
         $resultat=MonPdo::getInstance()->prepare($sql);
         $resultat->bindParam(':FAM_CODE',$fam_code);
         $resultat->bindParam(':MED_NOMCOMMERCIAL',$NomCommercial);

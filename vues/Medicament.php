@@ -23,7 +23,7 @@
 		}
 
 		If(!empty($_REQUEST['id'])){ ?>
-		  <label for "DepotLegal">DEPOT LEGAL :</label><input type="text" size="10" name="MED_DEPOTLEGAL" class="zone" value="<?php if(!empty($_REQUEST['id'])){echo $id; } ?>" /> </br> <?php } ?>
+		  <label for "DepotLegal">DEPOT LEGAL :</label><input type="text" size="10" name="MED_DEPOTLEGAL" class="zone" value="<?php if(!empty($_REQUEST['id'])){echo $id; } ?>"/> </br> <?php } ?>
 		
 		<label for "NomCommercial">NOM COMMERCIAL :</label><input type="text" size="25" name="MED_NOMCOMMERCIAL" class="zone" value="<?php if(!empty($_REQUEST['id'])){echo $NomCommercial;} ?>"/></br>
 		<label for "Famille">FAMILLE :</label><input type="text" size="3" name="FAM_CODE" class="zone" value="<?php if(!empty($_REQUEST['id'])){echo $code;} ?>" /></br>
